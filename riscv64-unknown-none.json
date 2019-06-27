@@ -1,0 +1,31 @@
+{
+  "abi-blacklist": [
+    "cdecl",
+    "stdcall",
+    "fastcall",
+    "vectorcall",
+    "thiscall",
+    "aapcs",
+    "win64",
+    "sysv64",
+    "ptx-kernel",
+    "msp430-interrupt",
+    "x86-interrupt",
+    "amdgpu-kernel"
+  ],
+  "llvm-target": "riscv64-unknown-none",
+  "data-layout": "e-m:e-p:64:64-i64:64-i128:128-n64-S128",
+  "linker-flavor": "gcc",
+  "cpu": "generic-rv64",
+  "target-endian": "little",
+  "target-pointer-width": "64",
+  "target-c-int-width": "64",
+  "arch": "riscv64",
+  "os": "none",
+  "features": "+m,+a",
+  "disable-redzone": true,
+  "panic-strategy": "abort",
+  "relocation-model": "static",
+  "atomic-cas": true,
+  "max-atomic-width": "64"
+}
