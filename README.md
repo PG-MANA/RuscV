@@ -1,4 +1,4 @@
-# RusBoot
+# RuscV
 (Format:UTF-8)  
 Rustで書かれたRisc-V CPUで起動する何か
 
