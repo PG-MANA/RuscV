@@ -29,10 +29,6 @@ LD = riscv64-elf-ld -n --gc-sections -Map $(MAKE_TMPDIR)$(NAME).map -nostartfile
 CARGO = cargo
 QEMU = qemu-system-riscv64 --nographic -machine virt
 
-##アセンブラ読み込み
-include config/$(TARGET_ARCH)/assembler.mk
-export AR
-
 ##ビルドファイル
 KERNELFILES = kernel.elf
 RUST_OBJ = target/$(RUST_TARGET)/release/lib$(NAME).a
