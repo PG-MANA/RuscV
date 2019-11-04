@@ -25,7 +25,7 @@ STRIP= riscv64-elf-strip
 MKDIR = mkdir -p
 CP = cp -r
 RM = rm -rf
-LD = riscv64-elf-ld -n --gc-sections -Map $(MAKE_TMPDIR)$(NAME).map -nostartfiles -nodefaultlibs -m elf64lriscv_lp64 -nostdlib -T $(MAKE_CONGIGDIR)linkerscript.ld
+LD = riscv64-unknown-elf-ld -n --gc-sections -Map $(MAKE_TMPDIR)$(NAME).map -nostartfiles -nodefaultlibs -m elf64lriscv -nostdlib -T $(MAKE_CONGIGDIR)linkerscript.ld
 CARGO = cargo
 QEMU = qemu-system-riscv64 --nographic -machine virt
 

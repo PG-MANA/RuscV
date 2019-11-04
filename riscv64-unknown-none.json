@@ -22,7 +22,7 @@
   "target-c-int-width": "64",
   "arch": "riscv64",
   "os": "none",
-  "features": "+m,+a",
+  "features": "+m,+a,+f,+d,+c",
   "disable-redzone": true,
   "panic-strategy": "abort",
   "relocation-model": "static",
