@@ -20,9 +20,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-
+## 追加のライセンス
+## ruscv.resc
 ruscv.rescは https://github.com/renode/renode/blob/master/scripts/single-node/sifive_fe310.resc を利用しています。  
-sifive_fe310.rescのライセンス  
 
 The MIT License (MIT)
 
