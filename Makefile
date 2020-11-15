@@ -5,7 +5,7 @@ NAME = ruscv
 ##ターゲット
 TARGET_ARCH = $(2)
 ifeq ($(strip $(TARGET_ARCH)),)
-    TARGET_ARCH = riscv64
+    TARGET_ARCH = riscv32
 endif
 RUST_TARGET = $(TARGET_ARCH)-unknown-none
 #RUST_TARGET_FILE_FOLDER = target-json/ # https://github.com/japaric/xargo/issues/146
@@ -20,14 +20,14 @@ MAKE_OBJDIR = $(MAKE_TMPDIR)obj/
 MAKE_CONGIGDIR =  $(MAKE_BASEDIR)config/$(TARGET_ARCH)/
 
 ##ソフトウェア
-STRIP= riscv64-elf-strip
+STRIP= riscv64-unknown-elf-strip
 ##↑変更
 MKDIR = mkdir -p
 CP = cp -r
 RM = rm -rf
-LD = riscv64-elf-ld -n --gc-sections -Map $(MAKE_TMPDIR)$(NAME).map -nostartfiles -nodefaultlibs -m elf64lriscv_lp64 -nostdlib -T $(MAKE_CONGIGDIR)linkerscript.ld
+LD = riscv64-unknown-elf-ld -n --gc-sections -Map $(MAKE_TMPDIR)$(NAME).map -nostartfiles -nodefaultlibs -m elf32lriscv -nostdlib -T $(MAKE_CONGIGDIR)hifive1.ld
 CARGO = cargo
-QEMU = qemu-system-riscv64 --nographic -machine virt
+QEMU = qemu-system-riscv32 --nographic -machine sifive_e
 
 ##ビルドファイル
 KERNELFILES = kernel.elf
@@ -45,7 +45,6 @@ export MAKE_OBJDIR
 ##デフォルト動作
 default:
 	$(MAKE) kernel
-	-$(STRIP) $(MAKE_BINDIR)*.elf #できなくてもいい
 
 ##初期化動作
 init:
@@ -61,9 +60,9 @@ kernel:
 	$(MAKE) init
 	$(MAKE) $(KERNELFILES)
 
-run:
-	$(MAKE) kernel
-	$(QEMU) -kernel bin/kernel.elf
+#run:
+#	$(MAKE) kernel
+#	$(QEMU) -kernel bin/kernel.elf
 
 # ファイル生成規則
 kernel.elf : $(BOOT_SYS_LIST)

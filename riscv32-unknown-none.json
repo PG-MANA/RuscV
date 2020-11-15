@@ -13,19 +13,19 @@
     "x86-interrupt",
     "amdgpu-kernel"
   ],
-  "llvm-target": "riscv64-unknown-none",
-  "data-layout": "e-m:e-p:64:64-i64:64-i128:128-n64-S128",
+  "llvm-target": "riscv32-unknown-none",
+  "data-layout": "e-m:e-p:32:32-i64:64-n32-S128",
   "linker-flavor": "gcc",
-  "cpu": "generic-rv64",
+  "cpu": "generic-rv32",
   "target-endian": "little",
-  "target-pointer-width": "64",
-  "target-c-int-width": "64",
-  "arch": "riscv64",
+  "target-pointer-width": "32",
+  "target-c-int-width": "32",
+  "arch": "riscv32",
   "os": "none",
   "features": "+m,+a",
   "disable-redzone": true,
   "panic-strategy": "abort",
   "relocation-model": "static",
   "atomic-cas": true,
-  "max-atomic-width": "64"
+  "max-atomic-width": "32"
 }

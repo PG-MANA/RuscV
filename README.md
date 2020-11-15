@@ -20,6 +20,32 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+
+ruscv.rescは https://github.com/renode/renode/blob/master/scripts/single-node/sifive_fe310.resc を利用しています。  
+sifive_fe310.rescのライセンス  
+
+The MIT License (MIT)
+
+Copyright (c) Antmicro <www.antmicro.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
 ## ビルド
 ### 環境整備
 必要なソフトウェア
@@ -33,10 +59,6 @@ limitations under the License.
 ```shell
 make
 #これでbin/kernel.elfができています
-
-make run
-#要:qemu-system-riscv64
-#終了する際はCtrl+Aを押して話した後Xキーを押す
 
 make clean
 #中間ファイル削除
@@ -52,5 +74,3 @@ make clean
   [https://twitter.com/PG_MANA_](https://twitter.com/PG_MANA_)
 ### 開発者のWebページ
   https://pg-mana.net
-### OS Wiki
-  https://soft.taprix.org/wiki/oswiki/
